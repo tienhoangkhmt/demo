@@ -5,7 +5,6 @@ import { ParagraphAntd } from '../TypographyAntd';
 import styled from 'styled-components';
 import ThemeConfigProvide from '../../../Theme/theme.config';
 
-
 const WrapperButtonAntd = styled(Button)`
     .wrapper-content {
         display: flex;

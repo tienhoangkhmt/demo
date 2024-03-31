@@ -1,5 +1,8 @@
-import axios, { AxiosError, AxiosResponse } from "axios"
-import { ParamsCreateAxios, ParamsRequest } from "../Types/api/api.type"
+import { MethodApi } from './../Constants/api.constants';
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { ParamsCreateAxios, ParamsRequest } from "../Types/api/api.type";
+
+
 
 export const requestInterceptor = (request: ParamsRequest):ParamsRequest => {
 
@@ -27,7 +30,7 @@ export const errorInterceptor = (error: AxiosError): Promise<AxiosError> => {
     return Promise.reject(error)
 }
 
-export const callApi = <T>({ url, method, params, body, headers }: ParamsCreateAxios<T>) => {
+export const callApi = <T>({ url, method = MethodApi.GET, params, body, headers }: ParamsCreateAxios<T>) => {
 
     const { VITE_REACT_URL } = import.meta.env
 

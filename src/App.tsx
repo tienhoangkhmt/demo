@@ -5,7 +5,11 @@ import { Alert } from "antd";
 import AlertMessage from './Utils/alert';
 import { typeMessage } from './Types/common/common.type';
 import TableAntd from './Components/UiDesign/TableAntd';
+import GroupFormItem from './Components/UiDesign/Form/GroupFormItem';
 
+type a = {
+  namedddd: string
+}
 
 function App() {
 
@@ -27,6 +31,7 @@ function App() {
         </Button> 
         <Alert message="sdf" />
           <TableAntd propsTable={{}} url='/api/v1/users' />
+          <GroupFormItem<a> ni={{namedddd: 'sdfs'}} listFiled={[{name: 'NAME', component: Button}]} />
       </ConfigProvider>
   )
 }

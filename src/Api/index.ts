@@ -50,6 +50,7 @@ export const callApi = <T>({ url, method = MethodApi.GET, params, body, headers 
         if(error?.response?.status === 500) {
             AlertMessage('error', typeMessage.error)
         }
-        return error;
+        
+        throw new Error(error)
     })
 }

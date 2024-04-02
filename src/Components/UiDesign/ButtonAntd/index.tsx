@@ -4,6 +4,7 @@ import { LoadingOutlined  } from '@ant-design/icons';
 import { ParagraphAntd } from '../TypographyAntd';
 import styled from 'styled-components';
 import ThemeConfigProvide from '../../../Theme/theme.config';
+import { OmitCustom } from '../../../Helper';
 
 const WrapperButtonAntd = styled(Button)`
     .wrapper-content {
@@ -19,7 +20,7 @@ const ButtonAntd:React.FC<typeButton> = (props: typeButton): React.JSX.Element =
     const { children, titleBtn, loading = false, type= "primary" } =  props;
 
     return (
-        <WrapperButtonAntd {...props} loading={loading} type={type}>
+        <WrapperButtonAntd {...OmitCustom(props, 'titleBtn')} loading={loading} type={type}>
            <ParagraphAntd className='wrapper-content'>
                 <ParagraphAntd className='title-content'>{children || titleBtn}</ParagraphAntd>
                 {/* set custom icon */}

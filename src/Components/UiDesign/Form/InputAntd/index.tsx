@@ -1,9 +1,9 @@
 import { Input } from "antd"
 
-const InputAntd = () => {
+const InputAntd = (props) => {
 
   return (
-    <Input />
+    <Input {...props} />
   )
 }
 

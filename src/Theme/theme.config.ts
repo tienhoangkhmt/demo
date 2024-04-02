@@ -1,6 +1,7 @@
 import { ThemeConfig } from "antd";
 
 const ThemeConfigProvide: ThemeConfig = {
+    hashed: false,
     components: {
         Button: {
             colorPrimary: '#7a1111',
@@ -20,7 +21,7 @@ const ThemeConfigProvide: ThemeConfig = {
         fontSize: 20,
         margin: 0,
         marginXS: 0
-    }
+    },
 }
 
 export default ThemeConfigProvide

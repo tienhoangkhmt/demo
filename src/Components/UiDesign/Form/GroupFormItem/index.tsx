@@ -32,7 +32,7 @@ export const FormItem = (props: ObjItemForm) => {
  }
 
 const GroupFormItem = <T,>(props: IPropsFormGroupItem<T>) => {
-  const { listFiled, layout="vertical"  } = props;
+  const { listFiled, layout="vertical" } = props;
 
   return (
     <Form 

@@ -1,26 +1,37 @@
-import { ThemeConfig } from "antd";
+import { ThemeConfigAntd } from "../Types/theme/theme.type";
 
-const ThemeConfigProvide: ThemeConfig = {
+const ThemeConfigProvide: ThemeConfigAntd = {
     hashed: false,
     components: {
         Button: {
-            colorPrimary: '#7a1111',
-            colorPrimaryActive:'#7a1111',
-            colorPrimaryHover: '#7a1111',
-            colorPrimaryBorder: 'none',
-            fontSize: 20,
-            algorithm: false,
-            primaryColor: '#47fa00'
-          },
-          Typography: {
-            titleMarginBottom: 0,
-            titleMarginTop: 0
-          }
+          colorPrimary: '#0F6AB3',
+          colorPrimaryActive:'#0F6AB3',
+          colorPrimaryHover: '#0F6AB3',
+          // colorPrimaryBorder: 'none',
+          fontSize: 16,
+          algorithm: false,
+          primaryColor: '#FFFFFF',
+          borderRadius: 4,
+          // defaultActiveBg: '#0F6AB3',
+          dangerColor: '#DCEEFE',
+          primaryShadow: '#0F6AB3',
+          defaultColor: '#0F6AB3',
+          defaultBorderColor: '#0F6AB3',
+          defaultBg: '#ffff',
+          dashedBg: '#DCEEFE',
+          fontWeight: 600
+          // dangerShadow: '#DCEEFE'
+         
+        },
+        Typography: {
+          titleMarginBottom: 0,
+          titleMarginTop: 0
+        }
     },
     token: {
-        fontSize: 20,
+        fontSize: 16,
         margin: 0,
-        marginXS: 0
+        marginXS: 0,
     },
 }
 

@@ -1,5 +1,5 @@
 import ButtonAntd from './Components/UiDesign/ButtonAntd'
-import { ConfigProvider, Button, message, Typography, Form } from 'antd'
+import { ConfigProvider, message, Typography, Form } from 'antd'
 import ThemeConfigProvide from './Theme/theme.config'
 import { Alert } from "antd";
 import AlertMessage from './Utils/alert';
@@ -8,9 +8,11 @@ import TableAntd from './Components/UiDesign/TableAntd';
 import GroupFormItem from './Components/UiDesign/Form/GroupFormItem';
 import InputAntd from './Components/UiDesign/Form/InputAntd';
 import { validateOption2 } from './Utils/validate';
-import { useDispatch, useSelector } from 'react-redux';
 import { postLogin } from './Features/auth/redux/auth.slice';
 import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from './store';
+import CustomIcons from './Components/CustomUi/Icons';
+// import { LoadingOutlined } from '@ant-design/icons';
 
 type a = {
   namedddd: string
@@ -22,29 +24,35 @@ function App() {
     AlertMessage('hoisdhfoi', typeMessage.error)
   };
 
-  const store = useSelector(store => store);
-  const dispatch = useDispatch()
-
+  const store = useAppSelector(store => store.auth);
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(postLogin())
   }, [dispatch])
 
   console.log("store", store);
-  
 
   return (
       <ConfigProvider theme={ThemeConfigProvide}>
         {/* {contextHolder} */}
         <ButtonAntd  onClick={success} titleBtn='sdf' >sdfsdfsd211</ButtonAntd>
-        <Button type='primary'>sdfsd</Button>
-        <Button type="primary" 
+        <ButtonAntd type='dashed'>sdfsd</ButtonAntd>
+        <ButtonAntd type="default" 
           onClick={() => { 
           message.info('Message Content!'); 
           }} 
         > 
         Click me to see Message 
-        </Button> 
+        </ButtonAntd> 
+        <ButtonAntd type="default" 
+          onClick={() => { 
+          message.info('Message Content!'); 
+          }} 
+          disabled
+        > 
+        Click me to see Message 
+        </ButtonAntd> 
         <Typography.Paragraph >sdfsd</Typography.Paragraph>
         <Alert message="sdf" />
           <TableAntd propsTable={{}} url='/api/v1/users' />
@@ -63,6 +71,7 @@ function App() {
             }]}
             form={form}
           />
+          <CustomIcons name='' />
       </ConfigProvider>
   )
 }

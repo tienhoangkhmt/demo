@@ -7,6 +7,7 @@ import { typeMessage } from '../Types/common/common.type';
 export const requestInterceptor = (request: ParamsRequest):ParamsRequest => {
 
     const token = localStorage.getItem("token");
+    request.headers['Abp.Tenantid'] = 4;
 
     if(token) {
         request.headers.Authorization = `Bearer ${token}`

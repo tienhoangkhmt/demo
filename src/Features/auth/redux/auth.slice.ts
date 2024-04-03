@@ -3,7 +3,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"
 import { callApi } from "../../../Api";
 
-const a =  {
+const account =  {
   isLoginInThirdParty: false,
   password: "123456a@A",
   rememberClient: false,
@@ -18,13 +18,9 @@ interface Auth {
 export const postLogin = createAsyncThunk('auth/login', async (_, { rejectWithValue }) => {
  
   try {
-    const res = await callApi({ url:'/TokenAuth/Authenticate', body: a });
-    console.log("log res", res);
-    
+    const res = await callApi({ url:'/TokenAuth/Authenticate', body: account , method: 'POST'});
     return res.data;
   }catch (error) {
-    console.log("error", error);
-    
     return rejectWithValue(error)
   }
 })

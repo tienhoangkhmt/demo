@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "http://172.16.86.182:9701/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -27,7 +28,8 @@
     "sip.js": "0.21.2",
     "socket.io-client": "4.7.5",
     "styled-components": "6.1.8",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "18.2.66",

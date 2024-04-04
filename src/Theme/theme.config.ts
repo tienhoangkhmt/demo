@@ -32,6 +32,8 @@ const ThemeConfigProvide: ThemeConfigAntd = {
         fontSize: 16,
         margin: 0,
         marginXS: 0,
+        // colorBgContainer: '#DCEEFE',
+        // borderRadiusLG: 20
     },
 }
 

@@ -3,14 +3,16 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { ParamsCreateAxios, ParamsRequest } from "../Types/api/api.type";
 import AlertMessage from '../Utils/alert';
 import { typeMessage } from '../Types/common/common.type';
+import { getLocal } from '../Utils';
 
 export const requestInterceptor = (request: ParamsRequest):ParamsRequest => {
 
-    const token = localStorage.getItem("token");
+    const token = getLocal("persist:auth");
+    
     request.headers['Abp.Tenantid'] = 4;
 
     if(token) {
-        request.headers.Authorization = `Bearer ${token}`
+        request.headers.Authorization = `Bearer ${token?.token}`
     }
 
     return request;

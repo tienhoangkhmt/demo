@@ -11,7 +11,7 @@ const account =  {
 }
 
 interface Auth {
-  token: string | null,
+  token: string,
   name: string
 }
 
@@ -26,7 +26,7 @@ export const postLogin = createAsyncThunk('auth/login', async (_, { rejectWithVa
 })
 
 const initialState: Auth = {
-  token: null,
+  token: "",
   name: ""
 }
 
@@ -35,8 +35,10 @@ const AdminSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(postLogin.fulfilled, (state) => {
-      state.token = "true11111111"
+    builder.addCase(postLogin.fulfilled, (state, action) => {
+      state.token = action.payload?.result?.accessToken
+      console.log("action", action);
+      
     })
     builder.addCase(postLogin.pending, (state) => {
       state.name = "lo1"
